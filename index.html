@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattleShip Game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+    
+        <div id="board"></div>
+        
+            <table>
+                <tr>
+                    <td id="00"></td><td id="01"></td><td id="02"></td><td id="03"></td><td id="04"></td><td id="05"></td><td id="06"></td>
+                </tr>
+                <tr>
+                    <td id="10"></td><td id="11"></td><td id="12"></td><td id="13"></td><td id="14"></td><td id="15"></td><td id="16"></td>
+                </tr>
+                <tr>
+                    <td id="20"></td><td id="21"></td><td id="22"></td><td id="23"></td><td id="24"></td><td id="25"></td><td id="26"></td>
+                </tr>
+                <tr>
+                    <td id="30"></td><td id="31"></td><td id="32"></td><td id="33"></td><td id="34"></td><td id="35"></td><td id="36"></td>
+                </tr>
+                <tr>
+                    <td id="40"></td><td id="41"></td><td id="42"></td><td id="43"></td><td id="44"></td><td id="45"></td><td id="46"></td>
+                </tr>
+                <tr>
+                    <td id="50"></td><td id="51"></td><td id="52"></td><td id="53"></td><td id="54"></td><td id="55"></td><td id="56"></td>
+                </tr>
+                <tr>
+                    <td id="60"></td><td id="61"></td><td id="62"></td><td id="63"></td><td id="64"></td><td id="65"></td><td id="66"></td>
+                </tr>
+            </table>
+            <form id="input-form">
+                <input type="text" id="guessInput" placeHolder="A0">
+                <input type="button" id="fireButton" value="Fire!">
+            </form>
+        
+
+
+        <div class="own-ship">
+            <div class="head"><h2>OWN SHIP</h2>
+                <p>LAT          35'12.150N</p>
+                <p>LON         139'44.000E</p>
+                <p>SPEED           76.89KN</p>
+            </div>
+        </div>
+        <div class="cursor">
+            <div class="head"><h2>+CURSOR</h2>
+                <p>LAT          35'17.472N</p>
+                <p>LON         139'34.248E</p>
+                <p>SPEED           45:25KN</p>
+            </div>
+        </div>
+        <div class="nav-point">
+            <div class="head"><h2>NAV-POINT</h2>
+                <p>BRG              342.7'</p>
+                <p>RNG             45236NM</p>
+                <p>TTG               45.65</p>
+            </div>
+        </div>
+        <div class="knots">
+            <div class="head"><h2>KNOTS</h2>
+                <p>TRUE  06:00ARPA No.02</p>
+                <p>BRG  21.2'T   4.444NM</p>
+                <p>CRS  18.2'  SOG 0.13KN</p>
+            </div>
+        </div>
+
+        <div id="messageArea">
+            <h2> MESSAGE</h2>
+        </div>
+      
+        <div class="play-button">
+            <button id="play">How to Play</button>
+        </div>
+
+        <div class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-close">
+                    <span>X</span>
+                </div>
+                <h1> How to play BattleShip</h1>
+                <p>
+                    -There are 9 ships located somewhere in this grid in groups of 3.
+                </p>
+                <p>
+                    - Enter your guesses in the box and press "Fire" or press Enter.
+                </p>
+                <p>
+                    - Your job is to find the locations of these ships in the grid with minimum guesses.
+                </p>
+                <p>
+                    - Remember, the ships are in a group of 3. So, if you spot one ship, the rest 2 ships are going to be neighbours of the spotted ship.
+                </p>
+                <p>
+                    - When you find all the 3 fleets of ships, you will win the game. The game will display the stats about your performance based on the number of guesses.
+                </p>
+                
+            </div>
+        </div>
+
+
+        <script src="./battleship.js"></script>
+        
+    </body>
+
+    <style>
+    body{
+        background-color: black;
+        position: relative;
+        font-family: 'DotGothic16', sans-serif;
+    }
+    .own-ship{
+        width: 200px;
+        position: absolute;
+        color: chartreuse;
+        border: chartreuse solid 5px;
+        padding:10px;
+        left: 0;
+    }
+    .cursor{
+        width: 200px;
+        position: absolute;
+        color: chartreuse;
+        border: chartreuse solid 5px;
+        padding:10px;
+        right: 0;
+    }
+    .nav-point{
+        width: 200px;
+        position: absolute;
+        color: chartreuse;
+        border: chartreuse solid 5px;
+        padding:10px;
+        left: 0;
+        top: 250px;
+    }
+    .knots{
+        width: 200px;
+        position: absolute;
+        color: chartreuse;
+        border: chartreuse solid 5px;
+        padding:10px;
+        right: 0;
+        top: 250px;
+    }
+    .hit{
+        background: url("./Images/ship.png") no-repeat center center;
+    }
+    .miss{
+        background: url("./Images/misses.png") no-repeat center center;
+        
+    }
+    #messageArea{
+        position: absolute;
+        top: 530px;
+        color: chartreuse;
+        right: 50%;
+    }
+    #input-form{
+        position: absolute;
+        top:450px;
+        right: 40%;
+        background-color: chartreuse;
+        padding: 15px;
+    }
+    form input{
+        background-color: rgb(152,207,113);
+        border-color: rgb(83,175,19);
+        font-size: 1em;
+    }
+    table{
+        position: absolute;
+        left:36%;
+        top:50px;
+        border: rgba(128, 255, 0, 0.267) solid 5px;
+    }
+    td{
+        width: 43px;
+        height: 43px;
+    }
+    
+    #board{
+        position:absolute;
+        width: 512px;
+        height: 431px;
+        background: url("./Images/board.jpg") no-repeat;
+        left: 30%;
+        top: 0;
+    }
+
+    #play{
+        position: absolute;
+        width: 100px;
+        height: 50px;
+        background-color: yellowgreen;
+        top: 450px;
+        left:25%;
+        font-family: 'DotGothic16', sans-serif;
+        font-size:small;
+        font-weight: 500;
+    }
+    .modal{
+        background: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(250px);
+        }
+        .hidden {
+            display: none;
+            }
+    .modal-content{
+            background-color: yellowgreen;
+            padding: 2rem 3rem;
+            
+        }
+       
+    .modal-close{
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        font-weight: 400;
+    }      
+          
+    @media only screen and (max-width: 1000px){
+        .own-ship{
+            display: none;
+        }
+        .cursor{
+            display: none;
+        }
+        .nav-point{
+            display: none;
+        }
+        .knots{
+            display: none;
+        }
+        #board{
+            left: 0;
+        }
+        table{
+            left: 18%;
+        }
+    }
+
+
+
+    </style>
+
+</html>
