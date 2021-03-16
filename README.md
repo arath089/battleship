@@ -17,6 +17,7 @@
 <p>
 - When you find all the 3 fleets of ships, you will win the game. The game will display the stats about your performance based on the number of guesses.
 </p>
+<h3> NOTE- The website is currently designed for a computer screen and not a mobile phone screen. Updates coming soon. </h3>
 <img src="Images/board.jpg" width=100>
 <h3> About Me </h3>
 <p> My name is Archit Rathi and I am a Web Developer. I am a graduate from the University of Ottawa.</p>
