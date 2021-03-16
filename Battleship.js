@@ -193,7 +193,7 @@ document.querySelector('.modal-close span')
 window.onload=function(){
     var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
     if (mobile) {
-            alert("Visit this on a Computer for Better View");              
+            alert("Please visit this on a Computer for Better View. The grid might vary based on screen sizes, which would affect the game.");              
     } else {
     
     }
