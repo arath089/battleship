@@ -160,6 +160,13 @@ function init(){
     var guessInput = document.getElementById("guessInput");
     guessInput.onkeypress= handleKeyPress;
     model.generateShipLocations();
+    //For Mobile Screens Alert///
+    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+    if (mobile) {
+            alert("Visit this on a Computer for Better View");              
+    } else {
+    
+    }
 }
 
 function handleFireButton(){
@@ -190,11 +197,5 @@ document.querySelector('.modal-close span')
     .addEventListener('click', toggleModal);
 
 
-window.onload=function(){
-    var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
-    if (mobile) {
-            alert("Please visit this on a Computer for Better View. The grid might vary based on screen sizes, which would affect the game.");              
-    } else {
-    
-    }
-}
+
+
