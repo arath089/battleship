@@ -163,7 +163,7 @@ function init(){
     //For Mobile Screens Alert///
     var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
     if (mobile) {
-            alert("Please visit the website on a Computer for Better View. Some parts of the grid may not align perfectly on a mobile screen");              
+            alert("Please visit the website on a computer for better view. Some parts of the grid may not align perfectly on a mobile screen");              
     } else {
     
     }
