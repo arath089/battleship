@@ -1,5 +1,5 @@
 <img src="Images/ship.png" width=100> 
-<h1> BattleShip Game </h1> <h3><a href= "https://www.project-battleship-game.com/"> www.project-battleship-game.com</a></h3>
+<h1> BattleShip Game </h1> <h3><a href= "https://battleship-gold.vercel.app/">[ battleship-r47mwp235-arath089s-projects.vercel.app](https://battleship-gold.vercel.app/)</a></h3>
 <h3> A simple <em>JavaScript</em> based game which will ask you to make guesses and find Ships on the radar system.</h3>
 <h3> Rules of the game are as follows- </h3>
 <p>
